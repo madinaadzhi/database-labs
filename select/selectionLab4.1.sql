@@ -15,6 +15,8 @@ select *,
        date_format(RegistrationDay, '%W %m.%d.%Y') as NewFormatForRegistrationDay
 from Patient;
 
+select *
+from Doctor;
 select count(DoctorID) as NumOfDoctorInEachPolyclinic, PolyclinicID
 from Doctor
 group by PolyclinicID;
@@ -24,6 +26,8 @@ from Doctor
 group by PolyclinicID
 having count(DoctorID) != 2;
 
+select *
+from Speciality;
 select sum(Price) as TotalAmountOfSpeciality
 from Speciality
 having sum(Price) > 1010;

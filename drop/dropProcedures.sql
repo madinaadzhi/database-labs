@@ -5,4 +5,3 @@ drop procedure if exists inputParameter;
 drop procedure if exists inputAndOutputParameter;
 drop procedure if exists updateTable;
 drop procedure if exists selectData;
-drop procedure if exists PatientCursor;

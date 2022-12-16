@@ -4,7 +4,7 @@ where SpecialityID = 1;
 
 select *
 from Doctor
-where Name != 'Borisova Kateryna Yuriivna';
+where Name != 'Dobryi Vladyslav Ivanovych';
 
 select *
 from Doctor
@@ -22,15 +22,20 @@ where not Qualification = 'Higher';
 
 select *
 from Doctor
-where (SpecialityID > 1 or Qualification = 'First')
-  and (SpecialityID >= 2 or Qualification = 'Second');
+where (SpecialityID = 1 and Qualification = 'Higher')
+   or (SpecialityID >= 2 and Qualification = 'Second');
 
-select *, SpecialityID * PolyclinicID as Multiplication
-from Doctor;
+select TreatmentID,
+       PatientID,
+       year(VisitDay)  as Year,
+       month(VisitDay) as Month,
+       day(VisitDay)   as Day
+from Treatment
+where month(VisitDay) = 12;
 
 select Name, PolyclinicID
 from Doctor
-where PolyclinicID in (1);
+where PolyclinicID in (1, 2);
 
 select Name, Price
 from Procedures

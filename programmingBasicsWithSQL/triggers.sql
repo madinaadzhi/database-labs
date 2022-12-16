@@ -31,7 +31,8 @@ where Name = 'Vadim';
 
 select *
 from PatientArchives;
-select * from Patient;
+select *
+from Patient;
 
 create trigger updateData
     before update
@@ -66,4 +67,5 @@ end;
 
 insert into Treatment(VisitDay, PatientID)
 values ('2022-12-01', 2);
-select * from Treatment;
+select *
+from Treatment;
